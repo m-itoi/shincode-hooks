@@ -4,16 +4,25 @@ import {
   useState,
   useContext,
   // Reference：参照
+  // 指定したHTMLタグの情報を参照する。
+  useRef,
 } from 'react';
 import MakotoContext from './main.tsx';
 
 function App() {
   const [count, setCount] = useState(0);
+  const ref = useRef("");
   const makotoInfo = useContext(MakotoContext);
 
   const handleClick = () => {
     setCount(count + 1);
   };
+
+  const handleRef = () => {
+    console.log(ref);
+    console.log(ref.current.value);
+    console.log(ref.current.clientWidth);
+  }
 
   useEffect(() => {
     console.count('useEffect発火');
@@ -32,7 +41,8 @@ function App() {
 
       <hr />
       <h1>useRef</h1>
-      <input type="text" />
+      <input type="text" ref={ref} />
+      <button onClick={handleRef}>useRef</button>
     </div>
   );
 };
