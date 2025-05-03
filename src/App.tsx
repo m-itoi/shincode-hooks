@@ -9,8 +9,8 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('Hello, world!');
-  }, []); // コンポーネントのマウント時に1回だけ実行される。
+    console.count('useEffect発火');
+  }, [count]);
 
   return (
     <div className="App">
