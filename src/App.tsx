@@ -17,6 +17,9 @@ function App() {
       <h1>useState, useEffect</h1>
       <p>Count: {count}</p>
       <button onClick={handleClick}>＋</button>
+
+      <hr />
+      <h1>useContext</h1>
     </div>
   );
 };
