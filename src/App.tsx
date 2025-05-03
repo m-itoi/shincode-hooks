@@ -4,6 +4,7 @@ import {
   useState,
   useContext,
   useRef,
+  useMemo, // ブラウザのメモリに保存する
 } from 'react';
 import MakotoContext from './main.tsx';
 
@@ -24,6 +25,8 @@ function App() {
     console.count('useEffect発火');
   }, [count]);
 
+  // useMemo
+
   return (
     <div className="App">
       <h1>useState, useEffect</h1>
@@ -39,6 +42,9 @@ function App() {
       <h1>useRef</h1>
       <input type="text" ref={ref} />
       <button onClick={handleRef}>useRef</button>
+
+      <hr />
+      <h1>useMemo</h1>
     </div>
   );
 };
