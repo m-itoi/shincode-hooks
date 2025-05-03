@@ -26,6 +26,16 @@ function App() {
   }, [count]);
 
   // useMemo
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+
+  const square = () => {
+    let i = 0;
+    while (i < 1000000000) {
+      i++;
+    }
+    return count2 * count2;
+  };
 
   return (
     <div className="App">
@@ -45,6 +55,11 @@ function App() {
 
       <hr />
       <h1>useMemo</h1>
+      <div>カウント１：{count1}</div>
+      <div>カウント２：{count2}</div>
+      <div>square結果：{square()}</div>
+      <button onClick={()=> setCount1(count1 +1)}>カウント１</button>
+      <button onClick={()=> setCount2(count2 +1)}>カウント２</button>
     </div>
   );
 };
