@@ -1,5 +1,5 @@
 import './App.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -7,6 +7,10 @@ function App() {
   const handleClick = () => {
     setCount(count + 1);
   };
+
+  useEffect(() => {
+    console.log('Hello, world!');
+  }, []); // コンポーネントのマウント時に1回だけ実行される。
 
   return (
     <div className="App">
