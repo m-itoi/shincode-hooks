@@ -2,7 +2,8 @@ import './App.css'
 import {
   useEffect,
   useState,
-  useContext
+  useContext,
+  // Reference：参照
 } from 'react';
 import MakotoContext from './main.tsx';
 
@@ -28,6 +29,10 @@ function App() {
       <h1>useContext</h1>
       <p>名前：{makotoInfo.name}</p>
       <p>年齢：{makotoInfo.age}</p>
+
+      <hr />
+      <h1>useRef</h1>
+      <input type="text" />
     </div>
   );
 };
