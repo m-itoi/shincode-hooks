@@ -3,15 +3,13 @@ import {
   useEffect,
   useState,
   useContext,
-  // Reference：参照
-  // 指定したHTMLタグの情報を参照する。
   useRef,
 } from 'react';
 import MakotoContext from './main.tsx';
 
 function App() {
   const [count, setCount] = useState(0);
-  const ref = useRef("");
+  const ref = useRef(null);
   const makotoInfo = useContext(MakotoContext);
 
   const handleClick = () => {
@@ -20,8 +18,6 @@ function App() {
 
   const handleRef = () => {
     console.log(ref);
-    console.log(ref.current.value);
-    console.log(ref.current.clientWidth);
   }
 
   useEffect(() => {
